@@ -3,18 +3,17 @@
 
 NAME=libft.a
 
+OBJS := ft_strlen.o ft_strcpy.o ft_memcmp.o ft_atoi.o ft_memcpy.o ft_isprint.o ft_isalnum.o ft_isascii.o \
+	ft_strncmp.o ft_isdigit.o ft_isalpha.o ft_memset.o  ft_strchr.o ft_memchr.o ft_bzero.o ft_toupper.o ft_tolower.o \
+	 ft_strlcat.o ft_strnstr.o ft_strrchr.o ft_strlcpy.o ft_calloc.o ft_strdup.o
+
 all: $(NAME)
 
-# TODO: ask Charles or the internet about makefile wildcard (%.c and %.o)
+%.o: %.c
+	gcc -Wall -Wextra -Werror -fPIC -c $<
 
-ft_strlen.o: ft_strlen.c
-	gcc -Wall -Wextra -Werror -fPIC -c ft_strlen.c
-
-ft_strcpy.o: ft_strcpy.c
-	gcc -Wall -Wextra -Werror -fPIC -c ft_strcpy.c
-
-$(NAME): ft_strlen.o ft_strcpy.o
-	ar r libft.a ft_strlen.o ft_strcpy.o
+$(NAME): $(OBJS)
+	ar r libft.a $(OBJS)
 
 clean:
 	-rm *.o
@@ -27,5 +26,6 @@ fclean:
 re: clean all
 
 # for the tests: https://github.com/alelievr/libft-unit-test
-so: ft_strlen.o ft_strcpy.o
-	gcc -nostartfiles -shared -o libft.so ft_strlen.o ft_strcpy.o
+so: $(OBJS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
+
