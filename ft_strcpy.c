@@ -1,11 +1,7 @@
+#include "libft.h"
 
 char *ft_strcpy(char *dest, const char *src)
 {
-    int i = 0;
-    while (src[i] != '\0')
-    {
-        dest[i] = src[i];
-        i++;
-    }
+    ft_memcpy(dest, src, ft_strlen(src) + 1);
     return dest;
 }

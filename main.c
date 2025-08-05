@@ -206,3 +206,56 @@ int main(void)
 
 	return 0;
 }
+
+
+
+
+
+
+                               //ft_bzero
+
+// int main(void)
+// {
+//     char buffer1[20] = "Hello, World!";
+//     char buffer2[20] = "Hello, World!";
+
+//     printf("Before ft_bzero:\n");
+//     printf("buffer1: %s\n", buffer1);
+//     printf("buffer2: %s\n", buffer2);
+
+//     ft_bzero(buffer1, 6);    // zero out first 6 bytes in buffer1
+//     bzero(buffer2, 6);       // zero out first 6 bytes in buffer2 (standard libc)
+
+//     printf("\nAfter ft_bzero (buffer1):\n");
+//     for (int i = 0; i < 20; i++)
+//         printf("%02x ", (unsigned char)buffer1[i]);
+//     printf("\n");
+
+//     printf("After bzero (buffer2):\n");
+//     for (int i = 0; i < 20; i++)
+//         printf("%02x ", (unsigned char)buffer2[i]);
+//     printf("\n");
+
+//     return 0;
+// }
+
+
+
+
+
+
+
+                                        //ft_strcpy
+
+// int main(void)
+// {
+//     char src[] = "Hello, bunny!";
+//     char dest[50];  // Make sure the destination has enough space
+
+//     ft_strcpy(dest, src);
+
+//     printf("Source:      %s\n", src);
+//     printf("Destination: %s\n", dest);
+
+//     return 0;
+// }

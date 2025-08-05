@@ -5,7 +5,7 @@ int	ft_atoi(const char *num)
 	int i = 0;
 	int sign = 1;
 	int result = 0;
-	while ((num[i] >= 9 && num[i] <= 13) || num [i] == ' ')
+	while (ft_isspace(num[i]))
 		i++;
 	if(num[i] == '-' || num[i] == '+')
 	{

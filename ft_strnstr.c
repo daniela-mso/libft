@@ -6,9 +6,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i = 0;
 	size_t	j;
 
-    if(little == NULL)
-        return NULL;
-	if (*little == '\0')
+	if (*little == '\0' || len == 0)
 		return ((char *)big);
 
 	while (big[i] && i < len)

@@ -2,7 +2,7 @@
 #define LIBFT_H
 #include <stddef.h>
 
-int ft_strlen(char *str);
+int ft_strlen(const char *str);
 char *ft_strcpy(char *dest, const char *src);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 int	ft_atoi(const char *num);
@@ -25,6 +25,8 @@ char *ft_strrchr(const char *s, int c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 void *ft_calloc(int n, int size);
 char *ft_strdup(const char *s);
+int ft_isspace(int c);
+
 
 
 #endif
