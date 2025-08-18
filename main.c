@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <limits.h>
 
 
 // // pre-processor -> compilation -> linker
@@ -180,32 +181,32 @@
                                                //ft_strrchr
 
 
-int main(void)
-{
-	const char	*str = "hello world";
+// int main(void)
+// {
+// 	const char	*str = "hello world";
 
-	// Test 1: last occurrence of 'l'
-	char *result1 = ft_strrchr(str, 'l');
-	printf("Test 1 - ft_strrchr: %s\n", result1);
-	printf("Test 1 -    strrchr: %s\n", strrchr(str, 'l'));
+// 	// Test 1: last occurrence of 'l'
+// 	char *result1 = ft_strrchr(str, 'l');
+// 	printf("Test 1 - ft_strrchr: %s\n", result1);
+// 	printf("Test 1 -    strrchr: %s\n", strrchr(str, 'l'));
 
-	// Test 2: character not in string
-	char *result2 = ft_strrchr(str, 'z');
-	printf("Test 2 - ft_strrchr: %s\n", result2 ? result2 : "NULL");
-	printf("Test 2 -    strrchr: %s\n", strrchr(str, 'z') ? strrchr(str, 'z') : "NULL");
+// 	// Test 2: character not in string
+// 	char *result2 = ft_strrchr(str, 'z');
+// 	printf("Test 2 - ft_strrchr: %s\n", result2 ? result2 : "NULL");
+// 	printf("Test 2 -    strrchr: %s\n", strrchr(str, 'z') ? strrchr(str, 'z') : "NULL");
 
-	// Test 3: null terminator
-	char *result3 = ft_strrchr(str, '\0');
-	printf("Test 3 - ft_strrchr points to: %p (should be at end of string)\n", (void *)result3);
-	printf("Test 3 -    strrchr points to: %p\n", (void *)strrchr(str, '\0'));
+// 	// Test 3: null terminator
+// 	char *result3 = ft_strrchr(str, '\0');
+// 	printf("Test 3 - ft_strrchr points to: %p (should be at end of string)\n", (void *)result3);
+// 	printf("Test 3 -    strrchr points to: %p\n", (void *)strrchr(str, '\0'));
 
-	// Test 4: first character
-	char *result4 = ft_strrchr(str, 'h');
-	printf("Test 4 - ft_strrchr: %s\n", result4);
-	printf("Test 4 -    strrchr: %s\n", strrchr(str, 'h'));
+// 	// Test 4: first character
+// 	char *result4 = ft_strrchr(str, 'h');
+// 	printf("Test 4 - ft_strrchr: %s\n", result4);
+// 	printf("Test 4 -    strrchr: %s\n", strrchr(str, 'h'));
 
-	return 0;
-}
+// 	return 0;
+// }
 
 
 
@@ -259,3 +260,96 @@ int main(void)
 
 //     return 0;
 // }
+
+
+
+
+
+                            //ft_itoa
+
+int main()
+{
+	printf("%s\n", ft_itoa(247));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-247));
+	printf("%s\n", ft_itoa(INT_MIN));
+	printf("%s\n", ft_itoa(-623));
+	printf("%s\n", ft_itoa(156));
+	printf("%s\n", ft_itoa(-0));
+
+}
+
+
+
+
+
+
+                            //ft_strtrim
+					
+// int main()
+// {
+// 	printf("%s", ft_strtrim("==hello==", "="));
+// }
+
+
+
+
+
+ 
+
+
+                                         //ft_split 
+
+
+// int main(void)
+// {
+//     char **result;
+//     char *str = "Hello,42,World,this,is,a,test";
+//     char sep = ',';
+
+//     printf("Splitting string: \"%s\" with separator '%c'\n", str, sep);
+//     result = ft_split(str, sep);
+//     if (!result)
+//     {
+//         printf("ft_split returned NULL\n");
+//         return (1);
+//     }
+
+//     int i = 0;
+//     while (result[i])
+//     {
+//         printf("result[%d] = \"%s\"\n", i, result[i]);
+//         i++;
+//     }
+
+//     free_split(result);
+
+//     // Another test with spaces
+//     str = "   split   this   properly   ";
+//     sep = ' ';
+//     printf("\nSplitting string: \"%s\" with separator '%c'\n", str, sep);
+//     result = ft_split(str, sep);
+//     if (!result)
+//     {
+//         printf("ft_split returned NULL\n");
+//         return (1);
+//     }
+
+//     i = 0;
+//     while (result[i])
+//     {
+//         printf("result[%d] = \"%s\"\n", i, result[i]);
+//         i++;
+//     }
+
+//     free_split(result);
+
+//     return (0);
+// }
+
+
+
+
+
+
+

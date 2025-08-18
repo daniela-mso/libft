@@ -1,29 +1,32 @@
+#include <stddef.h>
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t i = 0;
+	long long i = 0;
+    const char  *b = src;
+    char  *v = dst;
+
 
 
 	if (!dst && !src)
 		return (NULL);
-    if(src < dest)
+    if(src < dst)
     {
-        i = ft_strlen(src);
-        while (i >= 0)
+        i = n - 1;
+        while (i  >= 0)
         {
-        dest[i] = src[i];
-        i--;
+            v[i] = b[i];
+            i--;
         }
-        return dest;
     }
+    else 
+    {
+        while (i < (long long)n)
+        {
+            v[i] = b[i];
+            i++;
+        }
+    }
+    return dst;
 
-	i = 0;
-	while (i < len)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dst);
+	
 }
-
-
-8
