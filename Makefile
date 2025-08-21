@@ -8,11 +8,11 @@ OBJS := ft_strlen.o ft_strcpy.o ft_memcmp.o ft_atoi.o ft_memcpy.o ft_isprint.o f
 	 ft_strlcat.o ft_strnstr.o ft_strrchr.o ft_strlcpy.o ft_calloc.o ft_strdup.o ft_isspace.o ft_memmove.o \
 	 ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o  ft_itoa.o ft_substr.o ft_strjoin.o ft_strtrim.o \
 	 ft_strmapi.o ft_split.o \
-	 ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o
+	 ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
 
 
 
-BONUS_OBJS := ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o
+BONUS_OBJS := ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
 
 all: $(NAME)
 
@@ -32,7 +32,7 @@ fclean:
 
 re: clean all
 
-
+# this doesent work with the testing thing  but its required by the project
 bonus: $(OBJS) $(BONUS_OBJS)
 	ar r $(NAME) $(OBJS) $(BONUS_OBJS)
 

@@ -1,11 +1,19 @@
 #include "libft.h"
 
-// void ft_lstadd_back(t_list **lst, t_list *new)
-// {
-//     while(lst->next != NULL)
-//         lst = lst->next;
-//     lst->next = new;
-// }
+void ft_lstadd_back(t_list **lst, t_list *new)
+{
+    t_list *pointer = *lst;
+
+    if(pointer == NULL)
+    {
+        *lst = new;
+        return;
+    }
+
+    while(pointer->next != NULL)
+        pointer = pointer->next;
+    pointer->next = new;
+}
 
 
 
