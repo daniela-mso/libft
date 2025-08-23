@@ -4,12 +4,20 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
     if(!lst || !(*f) || !(*del))
         return NULL;
+    
+    t_list *new_list = NULL;
+    t_list *first = NULL;
+
+     
     while(lst != NULL)
     {
-        (*f)(lst->content);
-        lst
+        if(first == NULL)
+            first = ft_lstnew((*f)(lst->content));
+        else 
+            new_list->next = ft_lstnew((*f)(lst->content));
+    
     }
-
+    return new_list;
 }
 
 
