@@ -21,3 +21,4 @@ int	ft_atoi(const char *num)
 	return (result * sign);
 }
 
+

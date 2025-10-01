@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *node = malloc(sizeof(t_list));
+    t_list	*node = malloc(sizeof(t_list));
     if(!node)
         return NULL;
 

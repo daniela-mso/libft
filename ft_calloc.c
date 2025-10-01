@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include "libft.h"
 
-void *ft_calloc(int n, int size)
+void	*ft_calloc(int n, int size)
 {
-    void *res= malloc(n * size);
+	void	*res;
+
+    res = malloc(n * size);
     if (res == NULL)
-        return NULL;
+		return NULL;
     ft_memset(res, 0, size * n);
-    return res;
+    return (res);
 }
