@@ -1,23 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/02 15:56:40 by danielad          #+#    #+#             */
+/*   Updated: 2025/10/02 16:00:53 by danielad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    t_list *temp;
+	t_list	*temp;
 
 	temp = *lst;
-    if (!lst || !(*del))
-        return;
-    while (*lst != NULL)
-    {
-        (*del)((*lst)->content);
-        temp = (*lst)->next;
-        free(*lst);
-        *lst = temp;
-    }
+	if (!lst || !(*del))
+		return ;
+	while (*lst != NULL)
+	{
+		(*del)((*lst)->content);
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
+	}
 }
-
-
 
 // lst: The address of a pointer to a node.
 // del: The address of the function used to delete
@@ -29,3 +39,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 // and free(3).
 // Finally, the pointer to the list must be set to
 // NULL.
+//
+// l.20 Store the current head in a temporary pntr to iterate through the list
+// l.25 Use the provided delete function to free the content inside the node
+// l.26 Save the pointer to the next node before deleting the current one
+// l.27 Free the current node itself
+// l.28 Move the list pointer to the next node to continue clearing

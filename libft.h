@@ -39,8 +39,6 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char **ft_split(const char *str, char sep);
 
 
-
-
 // BONUS PART
 
 typedef struct s_list

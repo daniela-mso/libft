@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/02 17:07:01 by danielad          #+#    #+#             */
+/*   Updated: 2025/10/02 17:07:03 by danielad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-
 t_list	*ft_lstnew(void *content)
 {
-    t_list	*node = malloc(sizeof(t_list));
-    if(!node)
-        return NULL;
+	t_list	*node;
 
-    node->content = content;
-    node->next = NULL;
-    return node;
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
 
 // Allocates (with malloc(3)) and returns a new node.

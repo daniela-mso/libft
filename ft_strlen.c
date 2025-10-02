@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniela <daniela@student.42.fr>            +#+  +:+       +#+        */
+/*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 18:08:04 by daniela           #+#    #+#             */
-/*   Updated: 2025/07/27 18:54:10 by daniela          ###   ########.fr       */
+/*   Updated: 2025/10/02 16:32:02 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-    int i = 0;
-    while(str[i] != '\0')
-        i++;
-    return i;
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

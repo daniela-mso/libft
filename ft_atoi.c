@@ -1,15 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/02 12:19:38 by danielad          #+#    #+#             */
+/*   Updated: 2025/10/02 12:19:45 by danielad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *num)
 {
-	int i = 0;
-	int sign = 1;
-	int result = 0;
+	int	i;
+	int	sign;
+	int	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
 	while (ft_isspace(num[i]))
 		i++;
-	if(num[i] == '-' || num[i] == '+')
+	if (num[i] == '-' || num[i] == '+')
 	{
-		if(num[i] == '-')
+		if (num[i] == '-')
 			sign *= -1;
 		i++;
 	}
@@ -21,4 +37,6 @@ int	ft_atoi(const char *num)
 	return (result * sign);
 }
 
-
+// l.8 Skip white spaces at the beginning
+// l.10 Check if the current char is a sign
+// l.18 Convert char to int and store it in result
