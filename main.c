@@ -1,4 +1,4 @@
-#include "libft.h"
+/**#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -193,11 +193,13 @@
 // 	// Test 2: character not in string
 // 	char *result2 = ft_strrchr(str, 'z');
 // 	printf("Test 2 - ft_strrchr: %s\n", result2 ? result2 : "NULL");
-// 	printf("Test 2 -    strrchr: %s\n", strrchr(str, 'z') ? strrchr(str, 'z') : "NULL");
+// 	printf("Test 2 -    strrchr: %s\n", strrchr(str, 'z') ? 
+strrchr(str, 'z') : "NULL");
 
 // 	// Test 3: null terminator
 // 	char *result3 = ft_strrchr(str, '\0');
-// 	printf("Test 3 - ft_strrchr points to: %p (should be at end of string)\n", (void *)result3);
+// 	printf("Test 3 - ft_strrchr points to: %p (should be at end of string)
+\n", (void *)result3);
 // 	printf("Test 3 -    strrchr points to: %p\n", (void *)strrchr(str, '\0'));
 
 // 	// Test 4: first character
@@ -225,7 +227,8 @@
 //     printf("buffer2: %s\n", buffer2);
 
 //     ft_bzero(buffer1, 6);    // zero out first 6 bytes in buffer1
-//     bzero(buffer2, 6);       // zero out first 6 bytes in buffer2 (standard libc)
+//     bzero(buffer2, 6);       // zero out first 6 bytes in buffer2 
+(standard libc)
 
 //     printf("\nAfter ft_bzero (buffer1):\n");
 //     for (int i = 0; i < 20; i++)
@@ -345,11 +348,4 @@ int main()
 //     free_split(result);
 
 //     return (0);
-// }
-
-
-
-
-
-
-
+// } **/
