@@ -6,12 +6,14 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:42:39 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 16:42:40 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/04 11:40:55 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include <stdbool.h>
+
+#include "libft.h"
 
 static char	*ft_strndup(const char *s, size_t n)
 {
@@ -29,47 +31,53 @@ static char	*ft_strndup(const char *s, size_t n)
 	return (new_string);
 }
 
-char	**ft_split(const char *str, char c)
+int	count_splits(const char *str, char c)
 {
-	if (!str)
-		return (NULL);
+	int		index;
+	int		nb_str;
+	bool	inside;
 
-	int index = 0;
-	int nb_str = 0;
-	int inside = 0;
-
-	while (str[index] != '\0')
+	index = -1;
+	nb_str = 0;
+	inside = false;
+	while (str[++index] != '\0')
 	{
-		if (str[index] != c && inside == 0)
+		if (str[index] != c && !inside)
 		{
-			inside = 1;
+			inside = true;
 			nb_str++;
 		}
 		else if (str[index] == c)
-			inside = 0;
-		index++;
+			inside = false;
 	}
-	char **sp = malloc(sizeof(char *) * (nb_str + 1));
-	if (!sp)
+	return (nb_str);
+}
+
+char	**ft_split(const char *str, char c)
+{
+	int		index;
+	char	**spited;
+	int		position;
+	int		begin;
+
+	if (!str)
 		return (NULL);
-
-	int i = 0;
-	int posicao = 0;
-
-	while (str[posicao] != '\0')
+	spited = malloc(sizeof(char *) * (count_splits(str, c) + 1));
+	if (!spited)
+		return (NULL);
+	index = 0;
+	position = 0;
+	while (str[position] != '\0')
 	{
-		while (str[posicao] == c)
-			posicao++;
-		if (str[posicao] == '\0')
+		while (str[position] == c)
+			position++;
+		if (str[position] == '\0')
 			break ;
-
-		int inicio = posicao;
-		while (str[posicao] != c && str[posicao] != '\0')
-			posicao++;
-		int fim = posicao - 1;
-
-		sp[i++] = ft_strndup(str + inicio, fim - inicio + 1);
+		begin = position;
+		while (str[position] != c && str[position] != '\0')
+			position++;
+		spited[index++] = ft_strndup(str + begin, (position -1) - begin + 1);
 	}
-	sp[i] = NULL;
-	return (sp);
+	spited[index] = NULL;
+	return (spited);
 }

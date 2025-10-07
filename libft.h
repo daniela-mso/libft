@@ -6,13 +6,13 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:13:14 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/03 16:19:30 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/04 10:04:02 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <stddef.h>
+# define LIBFT_H
+# include <stddef.h>
 
 int		ft_strlen(const char *str);
 char	*ft_strcpy(char *dest, const char *src);
