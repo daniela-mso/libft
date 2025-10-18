@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *dst, int c, int n)
+#include <stddef.h>
+
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*a;
 	unsigned char	fill_byte;
-	int				i;
+	size_t			i;
 
-	a = dst;
+	a = s;
 	fill_byte = c;
 	i = 0;
 	while (i < n)
@@ -24,5 +26,7 @@ void	*ft_memset(void *dst, int c, int n)
 		a[i] = fill_byte;
 		i++;
 	}
-	return (dst);
+	return (s);
 }
+
+// memset - fill memory with a constant byte 

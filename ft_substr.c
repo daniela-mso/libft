@@ -20,10 +20,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*subs;
 
 	i = 0;
-	if (!s)
+	if (s == NULL)
 		return (NULL);
 	subs = malloc(sizeof(char) * len + 1);
-	if (!subs)
+	if (subs == NULL)
 		return (NULL);
 	if (start >= (unsigned int)ft_strlen(s))
 		start = (unsigned int)ft_strlen(s);
@@ -36,3 +36,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	subs[i] = '\0';
 	return (subs);
 }
+
+// Allocates memory (using malloc(3)) and returns a
+// substring from the string ’s’.
+// The substring starts at index ’start’ and has a
+// maximum length of ’len’.

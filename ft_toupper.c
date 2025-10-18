@@ -16,6 +16,7 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-// l.15 Check if the character is a lowercase letter
-// l.16 Convert to uppercase by subtracting 32 from its ASCII value
-// l.17 If not lowercase, return the character unchanged
+//convert lowercase letters to uppercase/
+//f  c is a lowercase letter, toupper() returns its uppercase equivalent, 
+// if an uppercase representation exists in the current locale. 
+//  Otherwise, it returns c. 

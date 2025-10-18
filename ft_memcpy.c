@@ -12,21 +12,31 @@
 
 #include <stddef.h>
 
-void	*ft_memcpy(void *dest, const void *src, int n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int			i;
-	const char	*b;
-	char		*v;
+	size_t		i;
+	const char	*new_src;
+	char		*new_dest;
 
-	if (!dest && !src)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	i = 0;
-	b = src;
-	v = dest;
+	new_src = src;
+	new_dest = dest;
 	while (i < n)
 	{
-		v[i] = b[i];
+		new_dest[i] = new_src[i];
 		i++;
 	}
 	return (dest);
 }
+
+//copies n bytes from memory area src to memory area dest.  
+// The memory areas must not overlap.  Use memmove(3) if the
+//  memory areas do overlap.
+//
+//RETURN VALUE
+//      The memcpy() function returns a pointer to dest.
+// return dest instead of new_dest since if im initializing 
+// new_dest to dest it means the 
+// poiters are the same so its the same thing (same thing for src)

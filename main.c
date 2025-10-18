@@ -41,6 +41,23 @@ int		main(int argc, const char *argv[])
 }
 
 
+
+//                                        strnstr
+
+// int main()
+// {
+// 	const char *str = "find the needle in the haystack";
+// 	const char *substr = "haystck";
+// 	char *result = ft_strnstr(str, substr, 40);
+// 	if (result)
+// 	{
+// 		printf("found substr: %s", substr);
+// 	}
+// 	else
+// 		printf("substring not found");
+// }
+
+
 /**#include "libft.h"
 #include <stdio.h>
 #include <string.h>
