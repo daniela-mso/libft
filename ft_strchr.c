@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: danielad <danielad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 13:56:11 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/03 17:11:56 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/19 14:01:33 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (c == '\0')
+	char	cc;
+
+	cc = (char) c;
+	if (cc == '\0')
 		return ((char *)(s + ft_strlen(s)));
-	return (ft_memchr(s, c, ft_strlen(s)));
+	return (ft_memchr(s, cc, ft_strlen(s)));
 }
 
 //returns a pointer to the first occurrence of the character c 

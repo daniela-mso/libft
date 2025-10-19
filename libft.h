@@ -6,13 +6,14 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:13:14 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/04 10:04:02 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:01:04 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 int		ft_strlen(const char *str);
 char	*ft_strcpy(char *dest, const char *src);
@@ -49,7 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(const char *str, char sep);
-// BONUS PART
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 typedef struct s_list
 {

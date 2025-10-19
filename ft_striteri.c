@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielad <danielad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 16:28:02 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/19 12:39:49 by danielad         ###   ########.fr       */
+/*   Created: 2025/10/19 12:22:04 by danielad          #+#    #+#             */
+/*   Updated: 2025/10/19 13:11:32 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
-	char			*new_s;
 
 	i = 0;
-	new_s = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (new_s == NULL)
-		return (NULL);
+	if (s == NULL || (*f) == NULL)
+		return ;
 	while (s[i] != '\0')
 	{
-		new_s[i] = (*f)(i, s[i]);
+		(*f)(i, &s[i]);
 		i++;
 	}
-	new_s[i] = '\0';
-	return (new_s);
 }
+
+//Applies the function ’f’ to each character of the
+//string passed as argument, passing its index as
+//the first argument. Each character is passed by
+//address to ’f’ so it can be modified if necessary.

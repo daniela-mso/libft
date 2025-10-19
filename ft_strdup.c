@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 16:41:13 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 16:41:14 by danielad         ###   ########.fr       */
+/*   Created: 2025/10/19 15:54:14 by danielad          #+#    #+#             */
+/*   Updated: 2025/10/19 15:54:18 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,14 @@ char	*ft_strdup(const char *s)
 	ft_strcpy(dup, s);
 	return (dup);
 }
+
+//     strdup -- save a copy of a string
+// SYNOPSIS
+//     char *strdup(const char *s1);
+// DESCRIPTION
+//     The strdup() function allocates sufficient
+// 	 memory for a copy of the string s1, does the 
+// 	 copy, and returns a pointer to it. The pointer may 
+// 	 subsequently be used as an argument to the function free(3).
+//     If insufficient memory is available, NULL is returned 
+// 	and errno is set to ENOMEM.

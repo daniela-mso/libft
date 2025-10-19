@@ -6,7 +6,7 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:07:28 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/03 18:18:41 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:26:25 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,34 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*first;
+	t_list	*new_element;
 
-	if (!lst || !(*f) || !(*del))
+	if (lst == NULL || (*f) == NULL || (*del) == NULL)
 		return (NULL);
 	new_list = NULL;
-	first = NULL;
+	new_element = NULL;
 	while (lst != NULL)
 	{
-		first = ft_lstnew((*f)(lst->content));
-		if (first == NULL)
+		new_element = ft_lstnew((*f)(lst->content));
+		if (new_element == NULL)
 		{
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
-		else
-			ft_lstadd_back(&new_list, first);
+		ft_lstadd_back(&new_list, new_element);
 		lst = lst->next;
 	}
 	return (new_list);
 }
 
-// lst: The address of a pointer to a node.
-// f: The address of the function used to iterate on
-// the list.
-// del: The address of the function used to delete
-// the content of a node if needed.
-// Return value The new list.
-// NULL if the allocation fails.
-// External functs. malloc, free
-// Description Iterates the list ’lst’ and applies the function
-// ’f’ on the content of each node. Creates a new
-// list resulting of the successive applications of
-// the function ’f’. The ’del’ function is used to
-// delete the content of a node if needed.
+//creates a new list resulting from the application of f to each element
+//  Iterate over the list 'lst' and apply the function 'f' to the content of 
+//  each elements. Create a new list resulting of the successive applications 
+//  of 'f'. The function 'del' is used to destroy the content of an element
+//  if necessary.
+// PARAMETERS
+//     lst: pointer address to one element
+//     f: the address of the function to apply
+//     del: the address of the function that can delete an element's content
+// RETURN VALUES
+//     None 

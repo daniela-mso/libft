@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 16:11:55 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 16:14:14 by danielad         ###   ########.fr       */
+/*   Created: 2025/10/19 15:52:38 by danielad          #+#    #+#             */
+/*   Updated: 2025/10/19 18:02:07 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,37 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*subs;
+	size_t			i;
+	char			*substr;
+	unsigned int	len_of_s;
 
 	i = 0;
+	len_of_s = (unsigned int)ft_strlen(s);
 	if (s == NULL)
 		return (NULL);
-	subs = malloc(sizeof(char) * len + 1);
-	if (subs == NULL)
+	if (start > len_of_s)
+		return (ft_strdup(""));
+	if (len > (len_of_s + start))
+		len = (len_of_s);
+	substr = ft_calloc(len + 1, sizeof(char));
+	if (substr == NULL)
 		return (NULL);
-	if (start >= (unsigned int)ft_strlen(s))
-		start = (unsigned int)ft_strlen(s);
 	while (i < len)
 	{
-		subs[i] = s[start];
+		substr[i] = s[start + i];
 		i++;
-		start++;
 	}
-	subs[i] = '\0';
-	return (subs);
+	substr[i] = '\0';
+	return (substr);
 }
 
-// Allocates memory (using malloc(3)) and returns a
-// substring from the string ’s’.
-// The substring starts at index ’start’ and has a
-// maximum length of ’len’.
+//     ft_substr -- extract a substring from a string
+// DESCRIPTION
+//     Allocate (with malloc(3)) and return a new string from the string s.
+//     This new string starts at index 'start' and has a maximum size of 'len'.
+// PARAMETERS
+//     s: string from which to extract the new string
+//     start: start index of the new string in the string 's'
+//     len: maximum size of the new string
+// RETURN VALUES
+//     ft_substr() returns the new string; NULL if the memory allocation failed.

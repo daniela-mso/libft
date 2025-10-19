@@ -6,7 +6,7 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:01:59 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 16:03:00 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:05:05 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!lst || !(*del))
+	if (lst == NULL || del == NULL)
 		return ;
-	while (lst != NULL)
-	{
-		(*del)(lst->content);
-		lst = lst->next;
-	}
+	del(lst->content);
+	free(lst);
 }
 
 // lst: The node to free.

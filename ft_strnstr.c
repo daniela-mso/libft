@@ -6,7 +6,7 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:20:51 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 16:21:46 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:03:36 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,22 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-
 	if (*little == '\0')
 	{
 		return ((char *)big);
 	}
 	if (!little)
-		return (char *)big;
+		return ((char *)big);
 	while (i < len && big[i] != '\0')
 	{
 		while ((i + j) < len && big[i + j] == little[j] && little[j])
 		{
 			j++;
 			if (little[j] == '\0')
-			return ((char *)(big + i));
+				return ((char *)(big + i));
 		}
 		i++;
 		j = 0;
-
 	}
 	return (NULL);
 }
@@ -52,4 +50,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // in big, NULL is returned; 
 // otherwise a pointer to the first character of the first occurrence of 
 // little is returned
-
