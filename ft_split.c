@@ -6,12 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:42:39 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/04 11:40:55 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/21 12:05:28 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdbool.h>
 
 #include "libft.h"
 
@@ -20,11 +19,9 @@ static char	*ft_strndup(const char *s, size_t n)
 	size_t	len;
 	char	*new_string;
 
-	len = 0;
-	while (len < n && s[len] != '\0')
-		len++;
-	new_string = malloc(sizeof(char) * len + 1);
-	if (!new_string)
+	len = n;
+	new_string = malloc(sizeof(char) * (len + 1));
+	if (new_string == NULL)
 		return (NULL);
 	ft_memcpy(new_string, s, len);
 	new_string[len] = '\0';
@@ -35,20 +32,20 @@ int	count_splits(const char *str, char c)
 {
 	int		index;
 	int		nb_str;
-	bool	inside;
+	int		inside;
 
 	index = -1;
 	nb_str = 0;
-	inside = false;
+	inside = 1;
 	while (str[++index] != '\0')
 	{
-		if (str[index] != c && !inside)
+		if (str[index] != c && inside == 1)
 		{
-			inside = true;
+			inside = 0;
 			nb_str++;
 		}
 		else if (str[index] == c)
-			inside = false;
+			inside = 1;
 	}
 	return (nb_str);
 }
@@ -56,14 +53,14 @@ int	count_splits(const char *str, char c)
 char	**ft_split(const char *str, char c)
 {
 	int		index;
-	char	**spited;
+	char	**splited;
 	int		position;
 	int		begin;
 
-	if (!str)
+	if (str == NULL)
 		return (NULL);
-	spited = malloc(sizeof(char *) * (count_splits(str, c) + 1));
-	if (!spited)
+	splited = malloc(sizeof(char *) * (count_splits(str, c) + 1));
+	if (splited == NULL)
 		return (NULL);
 	index = 0;
 	position = 0;
@@ -76,8 +73,8 @@ char	**ft_split(const char *str, char c)
 		begin = position;
 		while (str[position] != c && str[position] != '\0')
 			position++;
-		spited[index++] = ft_strndup(str + begin, (position -1) - begin + 1);
+		splited[index++] = ft_strndup(str + begin, (position -1) - begin + 1);
 	}
-	spited[index] = NULL;
-	return (spited);
+	splited[index] = NULL;
+	return (splited);
 }

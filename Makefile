@@ -1,6 +1,3 @@
-# target: dependencies dep2 dep3
-# 	recipe
-
 NAME=libft.a
 
 OBJS := ft_strlen.o \
@@ -42,35 +39,39 @@ OBJS := ft_strlen.o \
 
 
 
-BONUS_OBJS := ft_lstnew.o \
-	ft_lstadd_front.o \
-	ft_lstsize.o \
-	ft_lstlast.o \
-	ft_lstadd_back.o \
-	ft_lstdelone.o \
-	ft_lstclear.o \
-	ft_lstiter.o \
-	ft_lstmap.o
+BONUS_OBJS := ft_lstnew_bonus.o \
+	ft_lstadd_front_bonus.o \
+	ft_lstsize_bonus.o \
+	ft_lstlast_bonus.o \
+	ft_lstadd_back_bonus.o \
+	ft_lstdelone_bonus.o \
+	ft_lstclear_bonus.o \
+	ft_lstiter_bonus.o \
+	ft_lstmap_bonus.o
 
 all: $(NAME)
 
 %.o: %.c
-	cc -Wall -Wextra -Werror -g -fPIC -c $<
+	@cc -Wall -Wextra -Werror -g -fPIC -c $<
 
 $(NAME): $(OBJS)
-	ar r libft.a $(OBJS)
+	@ar r libft.a $(OBJS)
 
 clean:
-	-rm -f ${OBJS} ${BONUS_OBJS}
+	@-rm -f ${OBJS} ${BONUS_OBJS} 
 
 fclean:
-	-rm -f ${OBJS} ${BONUS_OBJS} ${NAME}
+	@-rm -f ${OBJS} ${BONUS_OBJS} ${NAME}
 
 re: clean all
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	ar r $(NAME) $(OBJS) $(BONUS_OBJS)
+	@ar r $(NAME) $(OBJS) $(BONUS_OBJS)
 
 so: $(OBJS)
-	cc -nostartfiles -shared -o libft.so $(OBJS)
+	@cc -nostartfiles -shared -o libft.so $(OBJS)
 
+.PHONY: all clean fclean re bonus so
+
+# target: dependencies dep2 dep3
+# 	recipe
