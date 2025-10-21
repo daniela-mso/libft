@@ -6,7 +6,7 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:52:38 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/21 15:41:34 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/21 19:13:07 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	len_of_s = (unsigned int)ft_strlen(s);
 	if (start >= len_of_s || len_of_s == 0)
 		return (ft_strdup(""));
-	if (len > (len_of_s + start))
-		len = len_of_s + start;
+	if (len_of_s - start < len)
+		len = len_of_s - start;
 	substr = ft_calloc(len + 1, sizeof(char));
 	if (substr == NULL)
 		return (NULL);

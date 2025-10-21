@@ -23,7 +23,6 @@ OBJS := ft_strlen.o \
 	ft_strlcpy.o \
 	ft_calloc.o \
 	ft_strdup.o \
-	ft_isspace.o \
 	ft_memmove.o \
 	ft_putchar_fd.o \
 	ft_putstr_fd.o \
