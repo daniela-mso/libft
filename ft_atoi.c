@@ -6,13 +6,13 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:06:09 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/21 19:10:31 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/21 19:20:38 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == ' ');
 }

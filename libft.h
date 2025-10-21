@@ -6,7 +6,7 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:13:14 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/19 18:01:04 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/21 19:21:38 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ char	*ft_strrchr(const char *s, int c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 void	*ft_calloc(int n, int size);
 char	*ft_strdup(const char *s);
-int		ft_isspace(int c);
 void	*ft_memmove(void *dst, const void *src, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
