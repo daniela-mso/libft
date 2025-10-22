@@ -6,27 +6,13 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:42:39 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/21 15:51:18 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:52:03 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "libft.h"
-
-static char	*ft_strndup(const char *s, size_t n)
-{
-	size_t	len;
-	char	*new_string;
-
-	len = n;
-	new_string = malloc(sizeof(char) * (len + 1));
-	if (new_string == NULL)
-		return (NULL);
-	ft_memcpy(new_string, s, len);
-	new_string[len] = '\0';
-	return (new_string);
-}
 
 int	count_splits(const char *str, char c)
 {
@@ -50,31 +36,71 @@ int	count_splits(const char *str, char c)
 	return (nb_str);
 }
 
+static char	*fill_word(const char *str, int start, int end)
+{
+	char	*word;
+	int		i;
+
+	i = 0;
+	word = malloc((end - start + 1) * sizeof(char));
+	if (word == NULL)
+		return (NULL);
+	while (start < end)
+	{
+		word[i] = str[start];
+		i++;
+		start++;
+	}
+	word[i] = 0;
+	return (word);
+}
+
+static void	initiate_var(size_t *i, int *j, int *s_word)
+{
+	*i = 0;
+	*j = 0;
+	*s_word = -1;
+}
+
+static void	*free_all(char **strs, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (NULL);
+}
+
 char	**ft_split(const char *str, char c)
 {
-	int		index;
 	char	**splited;
-	int		position;
-	int		begin;
+	size_t	i;
+	int		j;
+	int		s_word;
 
-	if (str == NULL)
-		return (NULL);
-	splited = malloc(sizeof(char *) * (count_splits(str, c) + 1));
+	initiate_var(&i, &j, &s_word);
+	splited = ft_calloc((count_splits(str, c) + 1), sizeof(char *));
 	if (splited == NULL)
 		return (NULL);
-	index = 0;
-	position = 0;
-	while (str[position] != '\0')
+	while (i <= (size_t)ft_strlen(str))
 	{
-		while (str[position] == c)
-			position++;
-		if (str[position] == '\0')
-			break ;
-		begin = position;
-		while (str[position] != c && str[position] != '\0')
-			position++;
-		splited[index++] = ft_strndup(str + begin, (position -1) - begin + 1);
+		if (str[i] != c && s_word < 0)
+			s_word = i;
+		else if ((str[i] == c || i == (size_t)ft_strlen(str)) && s_word >= 0)
+		{
+			splited[j] = fill_word(str, s_word, i);
+			if (!(splited[j]))
+				return (free_all(splited, j));
+			s_word = -1;
+			j++;
+		}
+		i++;
 	}
-	splited[index] = NULL;
+	splited[j] = NULL;
 	return (splited);
 }
