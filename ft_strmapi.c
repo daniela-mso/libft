@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danielad <danielad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:28:02 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/19 12:39:49 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 09:42:23 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_s[i] = '\0';
 	return (new_s);
 }
+
+//     Apply the function 'f' to each characters in the string 's' 
+// 	to create a new string (with malloc(3)) resulting of the 
+// 	successive applications of 'f'.
+// PARAMETERS
+//     s: string over which to iterate
+//     f: function to apply to each character
+// RETURN VALUES
+//     ft_strmapi() returns a new string resulting of the successive
+// 	 applications of 'f'; NULL if the memory allocations failed.
