@@ -6,11 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:49:13 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/04 11:36:57 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:32:02 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {

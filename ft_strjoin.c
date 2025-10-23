@@ -6,12 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:31:38 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 17:33:05 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:32:56 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

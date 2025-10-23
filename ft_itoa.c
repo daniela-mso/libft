@@ -6,11 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:28:32 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 15:13:00 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:30:44 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_intlen(long n)
 {

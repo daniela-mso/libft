@@ -6,9 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:25:30 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 13:26:42 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:30:29 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

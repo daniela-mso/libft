@@ -6,9 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 18:08:04 by daniela           #+#    #+#             */
-/*   Updated: 2025/10/02 16:32:02 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:33:08 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(const char *str)
 {

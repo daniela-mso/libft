@@ -6,15 +6,13 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:42:39 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/22 15:52:03 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:49:53 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
 #include "libft.h"
 
-int	count_splits(const char *str, char c)
+static int	count_splits(const char *str, char c)
 {
 	int		index;
 	int		nb_str;

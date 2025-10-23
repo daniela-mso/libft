@@ -6,11 +6,10 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:05:48 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 13:10:32 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:29:11 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

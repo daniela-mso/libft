@@ -6,9 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:11:05 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 16:11:07 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:33:38 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

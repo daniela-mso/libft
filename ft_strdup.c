@@ -6,12 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:54:14 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/19 15:54:18 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:32:47 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {

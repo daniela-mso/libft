@@ -6,11 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:20:51 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/19 18:03:36 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:33:24 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:54:24 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/19 15:54:32 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:31:54 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

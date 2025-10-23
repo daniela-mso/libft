@@ -6,12 +6,10 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:12:43 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/02 13:17:15 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:29:55 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_calloc(int n, int size)

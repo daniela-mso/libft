@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danielad <danielad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 13:56:11 by danielad          #+#    #+#             */
-/*   Updated: 2025/10/19 14:01:33 by danielad         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:32:37 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
