@@ -34,7 +34,9 @@ OBJS := ft_strlen.o \
 	ft_strtrim.o \
 	ft_strmapi.o \
 	ft_split.o \
-	ft_striteri.o
+	ft_striteri.o \
+	ft_atol.o \
+	ft_isspace.o
 
 
 
