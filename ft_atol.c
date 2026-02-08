@@ -6,7 +6,7 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 20:01:09 by danielad          #+#    #+#             */
-/*   Updated: 2026/01/19 20:08:29 by danielad         ###   ########.fr       */
+/*   Updated: 2026/02/08 21:36:42 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ long int	ft_atol(char *str)
 	num = 0;
 	while (ft_isspace(str[i]))
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			sign*= -1;
@@ -32,7 +32,7 @@ long int	ft_atol(char *str)
 	while (ft_isdigit(str[i]))
 	{	
 		num *= 10;
-		num += str[i] + '0';
+		num += str[i] - '0';
 		i++;
 	}
 	return (num * sign);
