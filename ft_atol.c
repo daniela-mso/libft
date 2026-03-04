@@ -6,11 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 20:01:09 by danielad          #+#    #+#             */
-/*   Updated: 2026/02/08 21:36:42 by danielad         ###   ########.fr       */
+/*   Updated: 2026/03/04 17:52:49 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 long int	ft_atol(char *str)
 {
@@ -26,11 +26,11 @@ long int	ft_atol(char *str)
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			sign*= -1;
+			sign *= -1;
 		i++;
 	}
 	while (ft_isdigit(str[i]))
-	{	
+	{
 		num *= 10;
 		num += str[i] - '0';
 		i++;

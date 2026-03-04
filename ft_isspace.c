@@ -6,11 +6,11 @@
 /*   By: danielad <danielad@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:27:09 by danielad          #+#    #+#             */
-/*   Updated: 2026/01/19 20:12:09 by danielad         ###   ########.fr       */
+/*   Updated: 2026/03/04 17:54:30 by danielad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 int	ft_isspace(int c)
 {
